@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#Main {
+    background-color: rgb(59, 49, 49);
+}
+#Navigation {
+    background-color: rgb(0, 0, 0);
+    height: 80px;
+}
+#Navigation ul {
+    margin-top: 40px;
+    float: right;
+    padding-right: 10px;
+}
+#Navigation ul a {
+    padding-right: 20px;
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(167, 172, 170);
+    font-weight: 600;
+}
+#Navigation img {
+    height: 80px;
+
+}
+
+#Main_Conteudo {
+    
+
+}
+
+@medi(max-width: 600px){
+    #Navigation img {
+        height: 40px
+
+    }
+}
