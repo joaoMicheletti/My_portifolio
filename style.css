@@ -6,11 +6,11 @@
 
 }
 body {
-    background-color: rgba(0, 0, 0, 0.973);
+    background-color: rgba(0, 0, 0);
 }
 #Navigation {
     background-color: rgb(0, 0, 0);
-    height: 70px;
+    height: 80px;
 }
 #Navigation ul {
     margin-top: 30px;
@@ -27,7 +27,12 @@ a:hover {
     cursor: pointer;
 }
 #Navigation img {
-    height: 70px;
+    height: 80px;
+
+}
+#Main {
+    background-image: url(image/andras-vas-IQ2a48CrN7E-unsplash.jpg);
+    background-size: cover;
 
 }
 #Main_Conteudo {
@@ -46,8 +51,8 @@ a:hover {
     overflow: hidden;
     color: #FFF;
     white-space: nowrap;
-    animation: caret .10s step-end infinite alternate,
-                type 5s steps(23, end)
+    animation: caret .12s step-end infinite alternate,
+                type 2s steps(23, end)
       
 }
 #Main_Txt .txt {
@@ -67,9 +72,11 @@ a:hover {
   }
 #Main_Txt .p1 {
     margin-top: 70px;
+    margin-left: 115px;
 }
 #Main_Txt h1 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 115px;
 }
 #Main_Txt p {
     font-size: 19px;
@@ -101,27 +108,25 @@ a:hover {
 }
 
 #Container_Projects {
-    margin-top: 50px;
+    margin-top: 30px;
+    color: white;
     width: 100%;
-    background-color: aqua;
+    background-image: url(image/ales-nesetril-Im7lZjxeLhg-unsplash.jpg );
+    background-size: cover;
 }
 #Txt_Projects {
     margin-left: 10%;
     width: 80%;
-    background-color: rgb(196, 116, 116);
     text-align: center;
 }
 #Projects {
     margin-top: 40px;
     width: 100%;
-    background-color: blueviolet;
 }
 #ProjetosDV1 {
     display: flex;
-    background-color: blue;
 }
 #ProjetosDV1 ul {
-    background-color: aqua;
     margin: auto;
     padding: 50px;
     
@@ -133,10 +138,8 @@ a:hover {
 #ProjetosDV2 {
     margin-top: 10px;
     display: flex;
-    background-color: blue;
 }
 #ProjetosDV2 ul {
-    background-color: aqua;
     margin: auto;
     padding: 50px;
     
