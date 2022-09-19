@@ -5,6 +5,9 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
 }
+button a {
+    text-decoration: none;
+}
 body {
     background-color: rgba(0, 0, 0);
 }
@@ -31,7 +34,7 @@ a:hover {
 
 }
 #Main {
-    background-image: url(image/andras-vas-IQ2a48CrN7E-unsplash.jpg);
+    background-image: url(image/ales-nesetril-Im7lZjxeLhg-unsplash.jpg);
     background-size: cover;
 
 }
@@ -111,19 +114,20 @@ a:hover {
     margin-top: 30px;
     color: white;
     width: 100%;
-    background-image: url(image/ales-nesetril-Im7lZjxeLhg-unsplash.jpg );
-    background-size: cover;
+    background-color: black;
+    display: flex;
 }
 #Txt_Projects {
-    margin-left: 10%;
+    margin-left: 5%;
     width: 80%;
     text-align: center;
 }
 #Projects {
-    margin-top: 40px;
+    margin-top: 5px;
     width: 100%;
 }
 #ProjetosDV1 {
+    justify-content: center;
     display: flex;
 }
 #ProjetosDV1 ul {
@@ -136,7 +140,8 @@ a:hover {
     height: 100px;
 }
 #ProjetosDV2 {
-    margin-top: 10px;
+    justify-content: center;
+    margin-top: 5px;
     display: flex;
 }
 #ProjetosDV2 ul {
@@ -146,6 +151,7 @@ a:hover {
 
 }
 #ProjetosDV2 ul img {
-    height: 100px;
+    height: 110px;
+    width: 200px;
 
 }
