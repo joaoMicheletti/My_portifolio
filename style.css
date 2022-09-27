@@ -155,3 +155,10 @@ a:hover {
     width: 200px;
 
 }
+.Contato_Container {
+    background-color: blue;
+    text-align: center;
+}
+h2 {
+    margin-top: 50px;
+}
