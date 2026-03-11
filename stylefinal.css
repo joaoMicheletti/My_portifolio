@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.headerHomeFixed {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.801);
+    padding: 15px;
+}
+.navigation {
+    width: 80%;
+}
+.navigation a {
+    padding-left: 10px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    font-size: 18px;
+    cursor: pointer;
+}
+.navigation a:hover {
+    color: gray;
+}
+.homeMain {
+  position: relative;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  height: 100vh;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.822), rgba(0, 0, 0, 0.836)),
+    url("assets/homeBg.webp");
+    
+  background-size: cover;
+  
+}
+.containerHome {
+    width: 50%;
+    margin-left: 25%;
+    text-align: center;
+}
+.farstyName {
+    font-size: 100px;
+    font-weight: 500;
+    color: white;
+} 
+.lastName{
+    margin-top: -35px;
+    font-size: 100px;
+    font-weight: bold;
+    color: white;
+}
+.function {
+    margin-top: -10px;
+    font-size: 30px;
+    letter-spacing: 10px;
+    font-weight: 100;
+    color: white;
+}
+.btnHome {
+    margin-top: 10px;
+    width: 20%;
+    height: 40px;
+    font-size: 18px;
+    border: solid 1px white;
+    border-radius: 10px;
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+}
+.btnHome:hover {
+    opacity: 80%;
+}
+@media(max-width:600px){
+    .containerHome {
+        width: 90%;
+        margin-left: 5%;
+        text-align: center;
+    }
+    .lastName{
+        margin-top: -35px;
+        font-size: 80px;
+        font-weight: bold;
+        color: white;
+    }
+    .function {
+        margin-top: -10px;
+        font-size: 15px;
+        letter-spacing: 10px;
+        font-weight: 100;
+        color: white;
+    }
+    .btnHome {
+        margin-top: 10px;
+        width: 30%;
+        height: 40px;
+        font-size: 18px;
+        border: solid 1px white;
+        border-radius: 10px;
+        color: white;
+        background-color: transparent;
+        cursor: pointer;
+    }
+}
+.footerHome {
+  position: absolute;
+  bottom: 0;
+  width: 50%;
+  margin-left: 30px;
+  padding-bottom: 20px;
+}
+.footerHome a {
+    text-decoration: none;
+    color: white;
+}
+.imgIcon {
+    cursor: pointer;
+    margin-left: 8px;
+    width: 20px;
+}
+.imgIcon:hover {
+    width: 22px;
+}
+
+.aboutSection{
+    background-image: url(assets/bgsecond.webp);
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.abouttext {
+    width:40%;
+}
+.aboutTitle {
+    font-size: 50px;
+    color: white;
+    text-decoration: underline;
+    text-decoration-color: rgba(0, 255, 255, 0.555);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+.aboutResume {
+    font-size: 18px;
+    color: white;
+}
+.adreassAbout {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: rgba(0, 255, 255, 0.555);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+.imgAbout{
+    text-align: center;
+    width: 40%;
+}
+.joaoimg{
+    width: 80%;
+}
+@media(max-width:600px){
+    .aboutSection{
+        background: 
+        linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)),
+        url("assets/bgsecond.webp");
+        flex-direction: column-reverse;
+    }
+    .abouttext {
+        width: 90%;
+    }
+    .adreassAbout {
+        margin-bottom: 20px;
+    }
+    .imgAbout{
+        text-align: center;
+        width: 80%;
+    }
+}
