@@ -73,5 +73,118 @@
         </div>
 
     </section>
+
+    <section class="carousel-section">
+        <div class="carousel-container">
+            
+            <button class="nav prev">‹</button>
+
+            <div class="carousel-track" id="track">
+            <!-- Cards (exemplo com 5, você pode gerar até 25) -->
+            
+            <a href="#" class="card"><img src="assets/projects/01.webp" /></a>
+
+
+
+            
+
+
+
+            </div>
+
+            <button class="nav next">›</button>
+
+        </div>
+    </section>
+    <section class="contact-section">
+        <div class="contact-container">
+
+            <!-- IMAGEM -->
+            <div class="contact-image">
+            <img src="https://via.placeholder.com/500x600" alt="Contato">
+            </div>
+
+            <!-- FORMULÁRIO -->
+            <div class="contact-form">
+            <h2>Contact?</h2>
+            <p>
+                Contate-nos para desenvolver um projeto sob medida. 
+                Esta página é um portfólio de um desenvolvedor fullstack.
+            </p>
+
+            <form id="form">
+                <input type="text" id="nome" placeholder="Seu nome" required>
+                <input type="email" id="email" placeholder="Seu email" required>
+                <input type="tel" id="telefone" placeholder="Seu telefone" required>
+                <textarea id="descricao" placeholder="Descreva seu projeto" required></textarea>
+
+                <button type="submit">Enviar via WhatsApp</button>
+            </form>
+            </div>
+
+        </div>
+    </section>
+    <script>
+        const track = document.getElementById('track');
+        const cards = document.querySelectorAll('.card');
+        const prev = document.querySelector('.prev');
+        const next = document.querySelector('.next');
+
+        let index = 1; // começa no meio
+
+        function updateCarousel() {
+        cards.forEach(card => card.classList.remove('active'));
+
+        if (cards[index]) {
+            cards[index].classList.add('active');
+        }
+
+        const cardWidth = cards[0].offsetWidth + 30;
+        track.style.transform = `translateX(-${index * cardWidth}px)`;
+        }
+
+        prev.addEventListener('click', () => {
+        index = index <= 0 ? cards.length - 1 : index - 1;
+        updateCarousel();
+        });
+
+        next.addEventListener('click', () => {
+        index = index >= cards.length - 1 ? 0 : index + 1;
+        updateCarousel();
+        });
+
+        // Inicializa
+        updateCarousel();
+    </script>
+    <script>
+        document.getElementById('form').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const nome = document.getElementById('nome').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const telefone = document.getElementById('telefone').value.trim();
+        const descricao = document.getElementById('descricao').value.trim();
+
+        if (!nome || !email || !telefone || !descricao) {
+            alert('Preencha todos os campos!');
+            return;
+        }
+
+        const mensagem = 
+        `Olá, vim através do seu portfólio.
+
+        📌 *Nome:* ${nome}
+        📧 *Email:* ${email}
+        📱 *Telefone:* ${telefone}
+
+        📝 *Descrição do projeto:*
+        ${descricao}`;
+
+        const numero = "5511932223533";
+        const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+
+        window.open(url, '_blank');
+        });
+    </script>
 </body>
 </html>
