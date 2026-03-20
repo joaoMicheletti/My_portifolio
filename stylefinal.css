@@ -75,6 +75,10 @@
     background-color: transparent;
     cursor: pointer;
 }
+.btnHome a {
+  text-decoration: none;
+  color: white;
+}
 .btnHome:hover {
     opacity: 80%;
 }
