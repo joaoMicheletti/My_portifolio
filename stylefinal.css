@@ -300,12 +300,15 @@
 
 /* IMAGEM */
 .contact-image {
+  display: flex;
+  align-items: center;
   width: 50%;
 }
 
 .contact-image img {
-  width: 100%;
-  height: 100%;
+  
+  margin-left: 25%;
+  width: 50%;
   object-fit: cover;
 }
 
@@ -350,7 +353,7 @@
   padding: 14px;
   border: none;
   border-radius: 6px;
-  background: #00ff88;
+  background: #ffffff;
   color: #000;
   font-weight: bold;
   cursor: pointer;
