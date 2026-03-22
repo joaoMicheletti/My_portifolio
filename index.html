@@ -120,7 +120,7 @@
 
             <!-- IMAGEM -->
             <div class="contact-image">
-            <img src="assets/form.webp" alt="Contato">
+            <img src="assets/joaobase.webp" alt="Contato">
             </div>
 
             <!-- FORMULÁRIO -->
@@ -152,24 +152,38 @@
         let index = 1; // começa no meio
 
         function updateCarousel() {
-        cards.forEach(card => card.classList.remove('active'));
+            ccards.forEach(card => card.classList.remove('active'));
 
-        if (cards[index]) {
-            cards[index].classList.add('active');
+            if (cards[index]) {
+                cards[index].classList.add('active');
+            }
+
+            const isMobile = window.innerWidth <= 768;
+
+            if (isMobile) {
+                track.style.transform = `translateX(0px)`;
+                return;
+            }
+
+            const style = window.getComputedStyle(cards[0]);
+            const marginRight = parseInt(style.marginRight);
+
+            const cardWidth = cards[0].offsetWidth + marginRight;
+            track.style.transform = `translateX(-${index * cardWidth}px)`;
         }
 
-        const cardWidth = cards[0].offsetWidth + 30;
-        track.style.transform = `translateX(-${index * cardWidth}px)`;
-        }
 
-        prev.addEventListener('click', () => {
-        index = index <= 0 ? cards.length - 1 : index - 1;
-        updateCarousel();
-        });
 
-        next.addEventListener('click', () => {
-        index = index >= cards.length - 1 ? 0 : index + 1;
-        updateCarousel();
+
+            prev.addEventListener('click', () => {
+            index = index <= 0 ? cards.length - 1 : index - 1;
+            updateCarousel();
+            });
+
+            next.addEventListener('click', () => {
+            index = index >= cards.length - 1 ? 0 : index + 1;
+            updateCarousel();
+            window.addEventListener('resize', updateCarousel);
         });
 
         // Inicializa
