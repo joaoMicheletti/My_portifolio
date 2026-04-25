@@ -1,0 +1,214 @@
+<section class="slider-section" id="slider">
+  <div class="slider-container">
+
+    <!-- TEXTO ESTÁTICO -->
+    <div class="slider-text active">
+      <p>
+        CONFIRA OS</br>
+        DADOS DA</br>
+        EDIÇÃO 2025
+      </p>
+    </div>
+
+    <!-- CARDS -->
+    <div class="slider-cards">
+      <div class="card active"
+        data-bg="https://blueoceaneventos.com.br/wp-content/uploads/2025/11/ewewewe.png">
+        <!-- arte - 01 -->
+        <img src="https://blueoceaneventos.com.br/wp-content/uploads/2026/03/numeros01.webp" alt="Patrocinadores">
+      </div>
+
+      <div class="card"
+        data-bg="httpss://blueoceaneventos.com.br/gasenergyweek/wp-content/uploads/2024/09/gas-energy-week-2024-016.jpg">
+        <!-- arte - 02 -->
+        <img src="https://blueoceaneventos.com.br/wp-content/uploads/2026/03/numeros02.webp" alt="Apoiadores">
+      </div>
+
+      <div class="card"
+        data-bg="httpss://blueoceaneventos.com.br/gasenergyweek/wp-content/uploads/2024/09/gas-energy-week-2024-018.jpg">
+        <!-- arte - 03 -->
+        <img src="https://blueoceaneventos.com.br/wp-content/uploads/2026/03/numeros03.webp" alt="Participantes">
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTROLES -->
+  <div class="slider-controls">
+    <button id="prev">&lt;</button>
+    <button id="next">&gt;</button>
+  </div>
+
+  <!-- SCRIPT -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const cards = document.querySelectorAll('.card');
+      const slider = document.getElementById('slider');
+      const sliderSection = document.querySelector('.slider-section');
+
+      let current = 0;
+
+      function updateSlider(index) {
+        cards.forEach((card, i) =>
+          card.classList.toggle('active', i === index)
+        );
+
+        const activeCard = cards[index];
+
+        sliderSection.style.opacity = 0;
+        slider.style.opacity = 0;
+
+        setTimeout(() => {
+          slider.style.backgroundImage = `url('${activeCard.dataset.bg}')`;
+          sliderSection.style.opacity = 1;
+          slider.style.opacity = 1;
+        }, 200);
+      }
+
+      document.getElementById('next').addEventListener('click', () => {
+        current = (current + 1) % cards.length;
+        updateSlider(current);
+      });
+
+      document.getElementById('prev').addEventListener('click', () => {
+        current = (current - 1 + cards.length) % cards.length;
+        updateSlider(current);
+      });
+
+      cards.forEach((card, index) => {
+        card.addEventListener('click', () => {
+          current = index;
+          updateSlider(current);
+        });
+      });
+
+      updateSlider(current);
+    });
+  </script>
+
+  <!-- STYLE -->
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: #111;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .slider-section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      overflow: hidden;
+      transition: background-image 0.8s ease-in-out, opacity 0.6s ease-in-out;
+    }
+
+    .slider-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.67);
+      z-index: 0;
+    }
+
+    .slider-container {
+      display: flex;
+      width: 95%;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .slider-text {
+      width: 30%;
+    }
+
+    .slider-text p {
+      font-family: poppins, sans-serif;
+      font-size: 3em;
+      font-weight: bold;
+      line-height: 45px;
+      color: #ffffff;
+    }
+
+    .slider-cards {
+      display: flex;
+      gap: 15px;
+      width: 70%;
+      justify-content: center;
+    }
+
+    .card {
+      width: 340px;
+      height: 400px;
+      border-radius: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      opacity: 0.3;
+    }
+
+    .card.active {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+
+    .card img {
+      width: 100%;
+      pointer-events: none;
+    }
+
+    .slider-controls {
+      position: absolute;
+      bottom: 50px;
+      display: flex;
+      gap: 20px;
+      z-index: 1;
+    }
+
+    .slider-controls button {
+      background: transparent;
+      border: 2px solid #fff;
+      color: #fff;
+      font-size: 1.2em;
+      border-radius: 50%;
+      padding: 10px 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .slider-controls button:hover {
+      background: #fff;
+      color: #111;
+    }
+
+    @media (max-width: 768px) {
+      .slider-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .slider-text,
+      .slider-cards {
+        width: 100%;
+      }
+
+      .slider-cards {
+        margin-top: 30px;
+      }
+
+      .card {
+        width: 100px;
+        height: 140px;
+      }
+    }
+  </style>
+</section>
