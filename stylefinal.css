@@ -274,7 +274,14 @@
     display: none;
   }
 }
-
+#fotoForm {
+  margin-left: 20%;
+  width: 60%;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
 
 .contact-section {
   padding: 80px 20px;
